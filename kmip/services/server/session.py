@@ -15,7 +15,6 @@
 
 import binascii
 import logging
-import socket
 import struct
 import threading
 import time
