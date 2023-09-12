@@ -184,11 +184,13 @@ class TestSymmetricKey(testtools.TestCase):
             self.bytes_128a
         )
 
-        args = "{0}, {1}, {2}, {3}".format(
+        args = "{0}, {1}, {2}, {3}, {4}, {5}".format(
             "algorithm={0}".format(enums.CryptographicAlgorithm.AES),
             "length={0}".format(128),
             "value={0}".format(binascii.hexlify(self.bytes_128a)),
-            "key_wrapping_data={0}".format({})
+            "masks={0}".format([]),
+            "names={0}".format(['Symmetric Key']),
+            "key_wrapping_data={0}".format({}),
         )
         expected = "SymmetricKey({0})".format(args)
         observed = repr(key)
